@@ -282,8 +282,9 @@ export default Home;
 const SlideShowCard = ({ image }: any) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 lg:gap-10
-    // changes t
-    ">
+    pb-24 md:pb-32 lg:pb-40
+    "
+    >
       {/* image */}
       <div className="relative">
         <Image src={image.image} alt={image.title}
@@ -356,7 +357,7 @@ const ProgressFooter = ({
 
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 fixed bottom-0 left-0 w-full bg-white">
       <div className="w-full h-[2px] bg-gray-300">
         <div className="h-full bg-gray-700" style={{ width: `${(currentIndex / total) * 100}%` }}></div>
       </div>
