@@ -209,11 +209,23 @@ const Home: NextPage = () => {
         <Head>
           <title>La Galeria</title>
           <meta name="description" content="art gallery website" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/roman-coin.png" />
         </Head>
         <nav className="flex items-center justify-between flex-wrap py-4 lg:py-7 text-black border-b border-gray-200">
           {/* title */}
-          <Link href="/" className="text-3xl font-black tracking-tighter">La Galeria</Link>
+          <div className="flex items-center gap-2">
+            {/* icon */}
+            <Link href="/">
+              <Image
+                src="/roman-coin.png"
+                alt="La Galeria"
+                width={50}
+                height={50}
+              />
+            </Link>
+
+            <Link href="/" className="text-2xl font-black tracking-tighter">La Galeria</Link>
+          </div>
 
           {/* start slideshow */}
           <button className="text-gray-400 tracking-widest text-sm uppercase"
