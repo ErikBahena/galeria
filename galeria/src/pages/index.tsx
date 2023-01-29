@@ -125,7 +125,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const [images, setImages] = useState<any>([]);
   const [slideShowPlaying, setSlideShowPlaying] = useState(false);
-  const [slideShowInterval, setSlideShowInterval] = useState(1000);
+  const [slideShowInterval, setSlideShowInterval] = useState(6000);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
 
   if (!images) return <div>Loading...</div>
@@ -245,7 +245,9 @@ export default Home;
 
 const SlideShowCard = ({ image }: any) => {
   return (
-    <div className="grid grid-cols-2 gap-3 md:gap-8 lg:gap-10 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 lg:gap-10
+    // changes t
+    ">
       {/* image */}
       <div className="relative">
         <Image src={image.image} alt={image.title}
@@ -256,21 +258,22 @@ const SlideShowCard = ({ image }: any) => {
         />
 
         {/* corner at top right with title */}
-        <div className="absolute top-0 right-0 pb-14 pt-2 px-14 bg-white text-center">
+        <div className="
+        absolute bottom-0 right-0 
+        md:top-0 md:bottom-auto
+        pb-7 md:pb-14 pt-2 px-7 md:px-14
+      bg-white text-center">
           <div>
-            <h3 className="text-black font-bold text-4xl">{image.title}</h3>
+            <h3 className="text-black font-bold text-lg md:text-4xl">{image.title}</h3>
             <p className="text-gray-700 text-xs md:text-sm">{image.artist}</p>
           </div>
         </div>
-
-
-
       </div>
 
       {/* text */}
       <div>
         {/* year */}
-        <p className="text-gray-300/70 -mb-10 text-9xl font-black text-right pr-4">{image.year}</p>
+        <p className="text-gray-300/70 -mb-5 md:-mb-10 text-5xl md:text-9xl font-black text-right pr-4">{image.year}</p>
         <p>
           {image.description}
         </p>
