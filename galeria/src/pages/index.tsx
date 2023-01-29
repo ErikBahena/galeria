@@ -123,7 +123,7 @@ let rawImages = [
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<any>([]);
   const [slideShowPlaying, setSlideShowPlaying] = useState(false);
   const [slideShowInterval, setSlideShowInterval] = useState(1000);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
@@ -207,7 +207,7 @@ const Home: NextPage = () => {
           <>
             {columns.map((column) => (
               <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
-                {column.map((image) => (
+                {column.map((image: any) => (
                   <div key={image.id} className={`relative h-min
           hover:scale-105 transform transition duration-300
           flex flex-col items-center
@@ -243,7 +243,7 @@ const Home: NextPage = () => {
 export default Home;
 
 
-const SlideShowCard = ({ image }) => {
+const SlideShowCard = ({ image }: any) => {
   return (
     <div className="grid grid-cols-2 gap-3 md:gap-8 lg:gap-10 ">
       {/* image */}
