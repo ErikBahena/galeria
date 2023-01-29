@@ -145,7 +145,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const [images, setImages] = useState<any>([]);
   const [slideShowPlaying, setSlideShowPlaying] = useState(false);
-  const [slideShowInterval, setSlideShowInterval] = useState(6000);
+  const [slideShowInterval, setSlideShowInterval] = useState(1000000);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
 
   if (!images) return <div>Loading...</div>
@@ -204,59 +204,63 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="px-3 md:px-8 lg:px-10">
-      <Head>
-        <title>La Galeria</title>
-        <meta name="description" content="art gallery website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <nav className="flex items-center justify-between flex-wrap py-4 lg:py-7 text-black border-b border-gray-200">
-        {/* title */}
-        <Link href="/" className="text-3xl font-black tracking-tighter">La Galeria</Link>
+    <>
+      <div className="px-3 md:px-8 lg:px-10">
+        <Head>
+          <title>La Galeria</title>
+          <meta name="description" content="art gallery website" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <nav className="flex items-center justify-between flex-wrap py-4 lg:py-7 text-black border-b border-gray-200">
+          {/* title */}
+          <Link href="/" className="text-3xl font-black tracking-tighter">La Galeria</Link>
 
-        {/* start slideshow */}
-        <button className="text-gray-400 tracking-widest text-sm uppercase"
-          onClick={handleToggleSlideShow}
-        >
-          {slideShowPlaying ? "Stop Slideshow" : "Start Slideshow"}
-        </button>
-      </nav>
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          {/* start slideshow */}
+          <button className="text-gray-400 tracking-widest text-sm uppercase"
+            onClick={handleToggleSlideShow}
+          >
+            {slideShowPlaying ? "Stop Slideshow" : "Start Slideshow"}
+          </button>
+        </nav>
+        <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
       gap-3 py-3 md:gap-8 md:py-7 lg:gap-10 lg:py-10">
-        {!slideShowPlaying &&
-          <>
-            {columns.map((column) => (
-              <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
-                {column.map((image: any) => (
-                  <div key={image.id} className={`relative h-min
+          {!slideShowPlaying &&
+            <>
+              {columns.map((column) => (
+                <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
+                  {column.map((image: any) => (
+                    <div key={image.id} className={`relative h-min
           hover:scale-105 transform transition duration-300
           flex flex-col items-center
           `}>
-                    {/* adds a gradient to the bottom of the image to make the text more readable */}
-                    <div className="absolute bottom-0 w-full left-0 h-1/3 bg-gradient-to-t from-gray-900"></div>
+                      {/* adds a gradient to the bottom of the image to make the text more readable */}
+                      <div className="absolute bottom-0 w-full left-0 h-1/3 bg-gradient-to-t from-gray-900"></div>
 
-                    <Image src={image.image} alt={image.title}
-                      width={800}
-                      height={500}
-                      loading="eager"
-                      style={{ width: '100%', height: 'auto' }}
-                    />
+                      <Image src={image.image} alt={image.title}
+                        width={800}
+                        height={500}
+                        loading="eager"
+                        style={{ width: '100%', height: 'auto' }}
+                      />
 
-                    <div className="absolute bottom-0 left-0 p-4 lg:p-6">
-                      <h3 className="text-white font-bold text-lg md:text-xl leading-snug tracking-wide">{image.title}</h3>
-                      <p className="text-gray-300 text-xs md:text-sm">{image.artist}</p>
+                      <div className="absolute bottom-0 left-0 p-4 lg:p-6">
+                        <h3 className="text-white font-bold text-lg md:text-xl leading-snug tracking-wide">{image.title}</h3>
+                        <p className="text-gray-300 text-xs md:text-sm">{image.artist}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </>
+                  ))}
+                </div>
+              ))}
+            </>
+          }
+        </main>
+        {slideShowPlaying &&
+          <SlideShowCard image={currentImage} />
         }
-      </main>
-      {slideShowPlaying &&
-        <SlideShowCard image={currentImage} />
-      }
-    </div>
+
+      </div>
+      {slideShowPlaying && <ProgressFooter currentIndex={slideShowIndex} currentImage={currentImage} setCurrentIndex={setSlideShowIndex} total={combinedColumns.length} />}
+    </>
   );
 };
 
@@ -304,6 +308,70 @@ const SlideShowCard = ({ image }: any) => {
       </div>
     </div>
 
+  )
+}
+
+const ProgressFooter = ({
+  currentIndex,
+  currentImage,
+  setCurrentIndex,
+  total
+}) => {
+  // display progress bar at bottom of page with the current image index 
+  // and the total number of images
+
+  const handleNext = () => {
+    if (currentIndex === total - 1) {
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex(currentIndex + 1);
+    }
+  }
+
+  const handlePrevious = () => {
+    if (currentIndex === 0) {
+      setCurrentIndex(total - 1);
+    } else {
+      setCurrentIndex(currentIndex - 1);
+    }
+  }
+
+
+
+  return (
+    <div className="mt-10">
+      <div className="w-full h-[2px] bg-gray-300">
+        <div className="h-full bg-gray-700" style={{ width: `${(currentIndex / total) * 100}%` }}></div>
+      </div>
+
+      <div className="p-4 md:px-10 md:py-7 flex justify-between w-full">
+        {/* title */}
+        <div>
+          <h3 className="text-black font-bold md:text-lg leading-snug tracking-wide">{currentImage.title}</h3>
+          <p className="text-gray-700 text-xs md:text-sm">{currentImage.artist}</p>
+        </div>
+
+
+        {/* next and previous buttons */}
+        <div className="flex items-center gap-4">
+          <button className="text-gray-400 hover:text-gray-500"
+            onClick={handlePrevious}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 md:w-8 md:h-8 h-6 md:w-8 md:h-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+
+          <button className="text-gray-400 hover:text-gray-500"
+            onClick={handleNext}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 md:w-8 md:h-8 h-6 md:w-8 md:h-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 
