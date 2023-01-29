@@ -328,6 +328,11 @@ const ProgressFooter = ({
   currentImage,
   setCurrentIndex,
   total
+}: {
+  currentIndex: number;
+  currentImage: any;
+  setCurrentIndex: any;
+  total: number;
 }) => {
   // display progress bar at bottom of page with the current image index 
   // and the total number of images
