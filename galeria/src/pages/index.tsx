@@ -145,7 +145,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const [images, setImages] = useState<any>([]);
   const [slideShowPlaying, setSlideShowPlaying] = useState(false);
-  const [slideShowInterval, setSlideShowInterval] = useState(1000000);
+  const [slideShowInterval, setSlideShowInterval] = useState(60000);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
 
   if (!images) return <div>Loading...</div>
@@ -203,6 +203,11 @@ const Home: NextPage = () => {
     setSlideShowPlaying(!slideShowPlaying);
   };
 
+  const handleClickedImage = (index: number) => {
+    setSlideShowIndex(index);
+    setSlideShowPlaying(true);
+  };
+
   return (
     <>
       <div className="px-3 md:px-8 lg:px-10">
@@ -240,11 +245,21 @@ const Home: NextPage = () => {
             <>
               {columns.map((column) => (
                 <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
-                  {column.map((image: any) => (
-                    <div key={image.id} className={`relative h-min
+                  {column.map((image: any, i: number) => (
+                    <div key={image.id} className="relative h-min
           hover:scale-105 transform transition duration-300
           flex flex-col items-center
-          `}>
+          "
+                      onClick={() => {
+                        // find the index of the image in the combined columns
+                        const index = combinedColumns.findIndex(
+                          (combinedImage: any) => combinedImage.id === image.id
+                        );
+
+                        setSlideShowIndex(index);
+                        setSlideShowPlaying(true);
+                      }}
+                    >
                       {/* adds a gradient to the bottom of the image to make the text more readable */}
                       <div className="absolute bottom-0 w-full left-0 h-1/3 bg-gradient-to-t from-gray-900"></div>
 
@@ -267,7 +282,9 @@ const Home: NextPage = () => {
           }
         </main>
         {slideShowPlaying &&
-          <SlideShowCard image={currentImage} />
+          <SlideShowCard image={currentImage}
+
+          />
         }
 
       </div>
