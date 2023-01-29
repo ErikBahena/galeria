@@ -216,10 +216,10 @@ const Home: NextPage = () => {
                     <div className="absolute bottom-0 w-full left-0 h-1/3 bg-gradient-to-t from-gray-900"></div>
 
                     <Image src={image.image} alt={image.title}
-                      // width={500}
-                      // height={500}
-                      loading="lazy"
-                      width="0" height="0" sizes="100vw" style={{ width: '100%', height: 'auto' }}
+                      width={800}
+                      height={500}
+                      loading="eager"
+                      style={{ width: '100%', height: 'auto' }}
                     />
 
                     <div className="absolute bottom-0 left-0 p-4 lg:p-6">
@@ -249,10 +249,10 @@ const SlideShowCard = ({ image }: any) => {
       {/* image */}
       <div className="relative">
         <Image src={image.image} alt={image.title}
-          // width={500}
-          // height={500}
-          loading="lazy"
-          width="0" height="0" sizes="100vw" style={{ width: '100%', height: 'auto' }}
+          width={800}
+          height={500}
+          loading="eager"
+          style={{ width: '100%', height: 'auto' }}
         />
 
         {/* corner at top right with title */}
