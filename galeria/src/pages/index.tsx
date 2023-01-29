@@ -261,7 +261,10 @@ const SlideShowCard = ({ image }: any) => {
         <div className="
         absolute bottom-0 right-0 
         md:top-0 md:bottom-auto
-        pb-7 md:pb-14 pt-2 px-7 md:px-14
+        py-2
+        md:pb-10 md:pt-2 md:px-10
+        px-7
+          
       bg-white text-center">
           <div>
             <h3 className="text-black font-bold text-lg md:text-4xl">{image.title}</h3>
