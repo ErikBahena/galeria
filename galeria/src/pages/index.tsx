@@ -61,7 +61,11 @@ let rawImages = [
     artist: "Gustav Klimt",
     year: 1907,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/450px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
-    description: "test"
+    description: `
+    The Kiss (in German Der Kuss) is an oil-on-canvas painting with added gold leaf, silver and platinum by the Austrian Symbolist painter Gustav Klimt.[3] It was painted at some point in 1907 and 1908, during the height of what scholars call his "Golden Period".[4] It was exhibited in 1908 under the title Liebespaar (the lovers)[5] as stated in the catalogue of the exhibition. The painting depicts a couple embracing each other, their bodies entwined in elaborate beautiful robes decorated in a style influenced by the contemporary Art Nouveau style and the organic forms of the earlier Arts and Crafts movement.
+
+The painting now hangs in the Österreichische Galerie Belvedere museum in the Belvedere, Vienna, and is considered a masterpiece of Vienna Secession (local variation of Art Nouveau) and Klimt's most popular work after Portrait of Adele Bloch-Bauer I.[6] It is widely considered one of the most recognized pieces of art in history, as well as one the most recognized portraits of women.[7]
+    `
   },
   {
     id: 9,
@@ -77,7 +81,14 @@ let rawImages = [
     artist: "Katsushika Hokusai",
     year: 1831,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/600px-The_Great_Wave_off_Kanagawa.jpg",
-    description: "test"
+    description: `
+    The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. "Under the Wave off Kanagawa")[a] is a woodblock print by Japanese ukiyo-e artist Hokusai, created in late 1831 during the Edo period of Japanese history. The print depicts three boats moving through a storm-tossed sea, with a large wave forming a spiral in the centre and Mount Fuji visible in the background.
+
+The print is Hokusai's best-known work and the first in his series Thirty-six Views of Mount Fuji, in which the use of Prussian blue revolutionized Japanese prints. The composition of The Great Wave is a synthesis of traditional Japanese prints and use of graphical perspective developed in Europe, and earned him immediate success in Japan and later in Europe, where Hokusai's art inspired works by the Impressionists. Several museums throughout the world hold copies of The Great Wave, many of which came from 19th-century private collections of Japanese prints.
+
+The Great Wave off Kanagawa has been described as "possibly the most reproduced image in the history of all art",[1] as well as being a contender for the "most famous artwork in Japanese history".[2] It has influenced several notable artists and musicians, including Vincent van Gogh, Claude Debussy, Claude Monet, and Hiroshige.
+    
+    `
   },
   {
     id: 11,
@@ -85,7 +96,9 @@ let rawImages = [
     artist: "Claude Monet",
     year: 1872,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/600px-Monet_-_Impression%2C_Sunrise.jpg",
-    description: "test"
+    description: `Impression, Sunrise (French: Impression, soleil levant) is an 1872 painting by Claude Monet first shown at what would become known as the "Exhibition of the Impressionists" in Paris in April, 1874. The painting is credited with inspiring the name of the Impressionist movement.
+
+    Impression, Sunrise depicts the port of Le Havre, Monet's hometown. It is now displayed at the Musée Marmottan Monet in Paris.[1]`
   },
   {
     id: 13,
@@ -93,7 +106,11 @@ let rawImages = [
     artist: "Leonardo da Vinci",
     year: 1489,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg/360px-Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg",
-    description: "test"
+    description: `
+    The Lady with an Ermine[n 1] is a portrait painting widely attributed to the Italian Renaissance artist Leonardo da Vinci. Dated to c. 1489–1491, the work is painted in oils on a panel of walnut wood. Its subject is Cecilia Gallerani, a mistress of Ludovico Sforza ("Il Moro"), Duke of Milan; Leonardo was painter to the Sforza court in Milan at the time of its execution. It is the second of only four surviving portraits of women painted by Leonardo, the others being Ginevra de' Benci, La Belle Ferronnière and the Mona Lisa.[3]
+
+Lady with an Ermine is now housed at the Czartoryski Museum in Kraków, and is one of Poland's national treasures.[4] It is part of the Princes Czartoryski Collection, which was sold for €100 million (5% of the estimated market value of the entire collection)[5] on 29 December 2016 to the Polish government by Princes Czartoryski Foundation, represented by Adam Karol Czartoryski, the last direct descendant of Izabela Czartoryska Flemming and Adam George Czartoryski, who brought the painting to Poland from Italy in 1798.[6][7][8]
+    `
   },
   {
     id: 14,
@@ -101,7 +118,10 @@ let rawImages = [
     artist: "Johannes Vermeer",
     year: 1658,
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/387px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg",
-    description: "test"
+    description: `
+    The Milkmaid (Dutch: De Melkmeid or Het Melkmeisje), sometimes called The Kitchen Maid, is an oil-on-canvas painting of a "milkmaid", in fact, a domestic kitchen maid, by the Dutch artist Johannes Vermeer. It is now in the Rijksmuseum in Amsterdam, the Netherlands, which regards it as "unquestionably one of the museum's finest attractions".[1]
+
+The exact year of the painting's completion is unknown, with estimates varying by source. The Rijksmuseum estimates it as circa 1658. According to the Metropolitan Museum of Art in New York City, it was painted in about 1657 or 1658.[2] The "Essential Vermeer" website gives a broader range of 1658–1661.[3]`
   },
   {
     id: 15,
@@ -254,7 +274,7 @@ const SlideShowCard = ({ image }: any) => {
           width={800}
           height={500}
           loading="eager"
-          style={{ width: '100%', height: 'auto' }}
+
         />
 
         {/* corner at top right with title */}
