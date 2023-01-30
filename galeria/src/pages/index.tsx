@@ -8,6 +8,25 @@ import { api } from "../utils/api";
 
 let rawImages = [
   {
+    id: 17,
+    title: "A Blossom of Imagination: A Child's Tree",
+    artist: "Evelyn A. Cruz",
+    year: 2023,
+    image:
+      "https://user-images.githubusercontent.com/80177106/215390756-e3a3b8dc-b9b8-4202-bf03-b61672b261b0.jpg",
+    description: `
+        Evelyn A. Cruz's 'Nature's Canvas: A Young Artist's Masterpiece' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
+    
+    The tree in the drawing is rendered in intricate detail, with each branch and leaf expertly drawn to create a sense of depth and realism. The flowers that surround the tree are also meticulously drawn, with vibrant colors and lifelike petals. The overall effect is one of serenity and wonder, as the viewer is transported to a peaceful and idyllic landscape.
+    
+    The use of color in this drawing is particularly noteworthy, with a subtle yet striking palette that perfectly complements the subject matter. The artist has skillfully used shades of greens and browns to create a sense of natural beauty, while the pops of pink and yellow in the flowers add a touch of vibrancy and liveliness to the scene.
+    
+    The composition of the drawing is also noteworthy, with the tree and flowers arranged in a way that is both aesthetically pleasing and evocative of the natural world. The balance and symmetry of the elements within the image are perfectly executed, creating a sense of harmony and tranquility.
+    
+    In 'Nature's Canvas: A Young Artist's Masterpiece', Evelyn A. Cruz has created a truly mesmerizing work of art. This drawing is a testament to her artistic skill and imagination, and it is sure to be treasured for many years to come.
+        `,
+  },
+  {
     id: 1,
     title: "Starry Night",
     artist: "Vincent van Gogh",
@@ -162,25 +181,6 @@ The exact year of the painting's completion is unknown, with estimates varying b
     description:
       "Elizabeth Bowes-Lyon (née Bowes; 4 August 1900 – 30 March 2002) was the wife of King George VI and the mother of Queen Elizabeth II. She was the last Empress consort of India and the first Queen consort of the United Kingdom of Great Britain and Northern Ireland and the British Dominions beyond the Seas. She was the longest-serving consort of a reigning British monarch, and the longest-lived British monarch's consort, until her death in 2002.",
   },
-  {
-    id: 17,
-    title: "A Blossom of Imagination: A Child's Tree",
-    artist: "Evelyn A. Cruz",
-    year: 2023,
-    image:
-      "https://user-images.githubusercontent.com/80177106/215390756-e3a3b8dc-b9b8-4202-bf03-b61672b261b0.jpg",
-    description: `
-    Evelyn A. Cruz's 'Nature's Canvas: A Young Artist's Masterpiece' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
-
-The tree in the drawing is rendered in intricate detail, with each branch and leaf expertly drawn to create a sense of depth and realism. The flowers that surround the tree are also meticulously drawn, with vibrant colors and lifelike petals. The overall effect is one of serenity and wonder, as the viewer is transported to a peaceful and idyllic landscape.
-
-The use of color in this drawing is particularly noteworthy, with a subtle yet striking palette that perfectly complements the subject matter. The artist has skillfully used shades of greens and browns to create a sense of natural beauty, while the pops of pink and yellow in the flowers add a touch of vibrancy and liveliness to the scene.
-
-The composition of the drawing is also noteworthy, with the tree and flowers arranged in a way that is both aesthetically pleasing and evocative of the natural world. The balance and symmetry of the elements within the image are perfectly executed, creating a sense of harmony and tranquility.
-
-In 'Nature's Canvas: A Young Artist's Masterpiece', Evelyn A. Cruz has created a truly mesmerizing work of art. This drawing is a testament to her artistic skill and imagination, and it is sure to be treasured for many years to come.
-    `,
-  },
 ];
 
 const Home: NextPage = () => {
@@ -219,10 +219,10 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     // scramble images
-    const scrambledImages = rawImages.sort(() => Math.random() - 0.5);
+    // const scrambledImages = rawImages.sort(() => Math.random() - 0.5);
 
     // set images
-    setImages(scrambledImages);
+    setImages(rawImages);
   }, []);
 
   useEffect(() => {
