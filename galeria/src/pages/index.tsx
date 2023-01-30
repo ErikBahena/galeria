@@ -352,7 +352,7 @@ export default Home;
 
 const SlideShowCard = ({ image }: any) => {
   return (
-    <div
+    <main
       className="grid grid-cols-1 pt-3 gap-3 pb-24 md:grid-cols-2 md:gap-8
     md:pb-32 lg:gap-10 lg:pb-40
     "
@@ -395,7 +395,7 @@ const SlideShowCard = ({ image }: any) => {
         </p>
         <p>{image.description}</p>
       </div>
-    </div>
+    </main>
   );
 };
 
