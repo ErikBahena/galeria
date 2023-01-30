@@ -14,8 +14,7 @@ let rawImages = [
     year: 2023,
     image:
       "https://user-images.githubusercontent.com/80177106/215397940-a5bbbb96-6990-4506-8cff-47a505bc9b6e.jpeg",
-    description: `
-        Evelyn A. Cruz's 'A Blossom of Imagination: A Child's Tree' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
+    description: `Evelyn A. Cruz's 'A Blossom of Imagination: A Child's Tree' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
     
     The tree in the drawing is rendered in intricate detail, with each branch and leaf expertly drawn to create a sense of depth and realism. The flowers that surround the tree are also meticulously drawn, with vibrant colors and lifelike petals. The overall effect is one of serenity and wonder, as the viewer is transported to a peaceful and idyllic landscape.
     
@@ -93,8 +92,7 @@ let rawImages = [
     year: 1907,
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/450px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
-    description: `
-    The Kiss (in German Der Kuss) is an oil-on-canvas painting with added gold leaf, silver and platinum by the Austrian Symbolist painter Gustav Klimt.[3] It was painted at some point in 1907 and 1908, during the height of what scholars call his "Golden Period".[4] It was exhibited in 1908 under the title Liebespaar (the lovers)[5] as stated in the catalogue of the exhibition. The painting depicts a couple embracing each other, their bodies entwined in elaborate beautiful robes decorated in a style influenced by the contemporary Art Nouveau style and the organic forms of the earlier Arts and Crafts movement.
+    description: `The Kiss (in German Der Kuss) is an oil-on-canvas painting with added gold leaf, silver and platinum by the Austrian Symbolist painter Gustav Klimt.[3] It was painted at some point in 1907 and 1908, during the height of what scholars call his "Golden Period".[4] It was exhibited in 1908 under the title Liebespaar (the lovers)[5] as stated in the catalogue of the exhibition. The painting depicts a couple embracing each other, their bodies entwined in elaborate beautiful robes decorated in a style influenced by the contemporary Art Nouveau style and the organic forms of the earlier Arts and Crafts movement.
 
 The painting now hangs in the Österreichische Galerie Belvedere museum in the Belvedere, Vienna, and is considered a masterpiece of Vienna Secession (local variation of Art Nouveau) and Klimt's most popular work after Portrait of Adele Bloch-Bauer I.[6] It is widely considered one of the most recognized pieces of art in history, as well as one the most recognized portraits of women.[7]
     `,
@@ -116,8 +114,7 @@ The painting now hangs in the Österreichische Galerie Belvedere museum in the B
     year: 1831,
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/600px-The_Great_Wave_off_Kanagawa.jpg",
-    description: `
-    The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. "Under the Wave off Kanagawa")[a] is a woodblock print by Japanese ukiyo-e artist Hokusai, created in late 1831 during the Edo period of Japanese history. The print depicts three boats moving through a storm-tossed sea, with a large wave forming a spiral in the centre and Mount Fuji visible in the background.
+    description: `The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. "Under the Wave off Kanagawa")[a] is a woodblock print by Japanese ukiyo-e artist Hokusai, created in late 1831 during the Edo period of Japanese history. The print depicts three boats moving through a storm-tossed sea, with a large wave forming a spiral in the centre and Mount Fuji visible in the background.
 
 The print is Hokusai's best-known work and the first in his series Thirty-six Views of Mount Fuji, in which the use of Prussian blue revolutionized Japanese prints. The composition of The Great Wave is a synthesis of traditional Japanese prints and use of graphical perspective developed in Europe, and earned him immediate success in Japan and later in Europe, where Hokusai's art inspired works by the Impressionists. Several museums throughout the world hold copies of The Great Wave, many of which came from 19th-century private collections of Japanese prints.
 
