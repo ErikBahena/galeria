@@ -16,7 +16,7 @@ const config = {
   },
   images: {
     // allow all domains
-    domains: ["upload.wikimedia.org"],
+    domains: ["upload.wikimedia.org", "user-images.githubusercontent.com"],
   },
 };
 export default config;
