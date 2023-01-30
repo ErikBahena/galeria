@@ -284,58 +284,56 @@ const Home: NextPage = () => {
             {slideShowPlaying ? "Stop Slideshow" : "Start Slideshow"}
           </button>
         </nav>
-        <main
-          className="grid grid-cols-1 gap-3 py-3 md:grid-cols-2
+        {!slideShowPlaying && (
+          <main
+            className="grid grid-cols-1 gap-3 py-3 md:grid-cols-2
       md:gap-8 md:py-7 lg:grid-cols-3 lg:gap-10 lg:py-10 xl:grid-cols-4"
-        >
-          {!slideShowPlaying && (
-            <>
-              {columns.map((column) => (
-                <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
-                  {column.map((image: any, i: number) => (
-                    <div
-                      key={image.id}
-                      className="relative flex
+          >
+            {columns.map((column) => (
+              <div className="flex flex-col gap-3 md:gap-8 lg:gap-10">
+                {column.map((image: any, i: number) => (
+                  <div
+                    key={image.id}
+                    className="relative flex
           h-min transform flex-col items-center
           transition duration-300 hover:scale-105
           "
-                      onClick={() => {
-                        // find the index of the image in the combined columns
-                        const index = combinedColumns.findIndex(
-                          (combinedImage: any) => combinedImage.id === image.id
-                        );
+                    onClick={() => {
+                      // find the index of the image in the combined columns
+                      const index = combinedColumns.findIndex(
+                        (combinedImage: any) => combinedImage.id === image.id
+                      );
 
-                        setSlideShowIndex(index);
-                        setSlideShowPlaying(true);
-                      }}
-                    >
-                      {/* adds a gradient to the bottom of the image to make the text more readable */}
-                      <div className="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-gray-900"></div>
+                      setSlideShowIndex(index);
+                      setSlideShowPlaying(true);
+                    }}
+                  >
+                    {/* adds a gradient to the bottom of the image to make the text more readable */}
+                    <div className="absolute bottom-0 left-0 h-1/3 w-full bg-gradient-to-t from-gray-900"></div>
 
-                      <Image
-                        src={image.image}
-                        alt={image.title}
-                        width={800}
-                        height={500}
-                        loading="eager"
-                        style={{ width: "100%", height: "auto" }}
-                      />
+                    <Image
+                      src={image.image}
+                      alt={image.title}
+                      width={800}
+                      height={500}
+                      loading="eager"
+                      style={{ width: "100%", height: "auto" }}
+                    />
 
-                      <div className="absolute bottom-0 left-0 p-4 lg:p-6">
-                        <h3 className="text-lg font-bold leading-snug tracking-wide text-white md:text-xl">
-                          {image.title}
-                        </h3>
-                        <p className="text-xs text-gray-300 md:text-sm">
-                          {image.artist}
-                        </p>
-                      </div>
+                    <div className="absolute bottom-0 left-0 p-4 lg:p-6">
+                      <h3 className="text-lg font-bold leading-snug tracking-wide text-white md:text-xl">
+                        {image.title}
+                      </h3>
+                      <p className="text-xs text-gray-300 md:text-sm">
+                        {image.artist}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              ))}
-            </>
-          )}
-        </main>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </main>
+        )}
         {slideShowPlaying && <SlideShowCard image={currentImage} />}
       </div>
       {slideShowPlaying && (
@@ -355,7 +353,7 @@ export default Home;
 const SlideShowCard = ({ image }: any) => {
   return (
     <div
-      className="grid grid-cols-1 gap-3 pb-24 md:grid-cols-2 md:gap-8
+      className="grid grid-cols-1 pt-3 gap-3 pb-24 md:grid-cols-2 md:gap-8
     md:pb-32 lg:gap-10 lg:pb-40
     "
     >
