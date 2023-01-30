@@ -463,7 +463,7 @@ const ProgressFooter = ({
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6 md:h-8 md:h-8 md:w-8 md:w-8"
+              className="h-6 w-6 md:h-8 md:w-8"
             >
               <path
                 strokeLinecap="round"
@@ -483,7 +483,7 @@ const ProgressFooter = ({
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6 md:h-8 md:h-8 md:w-8 md:w-8"
+              className="h-6 w-6 md:h-8 md:w-8"
             >
               <path
                 strokeLinecap="round"
