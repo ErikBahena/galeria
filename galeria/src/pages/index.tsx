@@ -13,9 +13,9 @@ let rawImages = [
     artist: "Evelyn A. Cruz",
     year: 2023,
     image:
-      "https://user-images.githubusercontent.com/80177106/215390756-e3a3b8dc-b9b8-4202-bf03-b61672b261b0.jpg",
+      "https://user-images.githubusercontent.com/80177106/215397940-a5bbbb96-6990-4506-8cff-47a505bc9b6e.jpeg",
     description: `
-        Evelyn A. Cruz's 'Nature's Canvas: A Young Artist's Masterpiece' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
+        Evelyn A. Cruz's 'A Blossom of Imagination: A Child's Tree' is a captivating depiction of a tree and flowers. This beautiful drawing was created by the young artist in 2023 and it showcases her innate talent and passion for art.
     
     The tree in the drawing is rendered in intricate detail, with each branch and leaf expertly drawn to create a sense of depth and realism. The flowers that surround the tree are also meticulously drawn, with vibrant colors and lifelike petals. The overall effect is one of serenity and wonder, as the viewer is transported to a peaceful and idyllic landscape.
     
@@ -23,7 +23,7 @@ let rawImages = [
     
     The composition of the drawing is also noteworthy, with the tree and flowers arranged in a way that is both aesthetically pleasing and evocative of the natural world. The balance and symmetry of the elements within the image are perfectly executed, creating a sense of harmony and tranquility.
     
-    In 'Nature's Canvas: A Young Artist's Masterpiece', Evelyn A. Cruz has created a truly mesmerizing work of art. This drawing is a testament to her artistic skill and imagination, and it is sure to be treasured for many years to come.
+    In 'A Blossom of Imagination: A Child's Tree', Evelyn A. Cruz has created a truly mesmerizing work of art. This drawing is a testament to her artistic skill and imagination, and it is sure to be treasured for many years to come.
         `,
   },
   {
@@ -353,7 +353,7 @@ export default Home;
 const SlideShowCard = ({ image }: any) => {
   return (
     <main
-      className="grid grid-cols-1 pt-3 gap-3 pb-24 md:grid-cols-2 md:gap-8
+      className="grid grid-cols-1 gap-3 pt-3 pb-24 md:grid-cols-2 md:gap-8
     md:pb-32 lg:gap-10 lg:pb-40
     "
     >
@@ -393,7 +393,12 @@ const SlideShowCard = ({ image }: any) => {
         <p className="-mb-5 pr-4 text-right text-5xl font-black text-gray-300/70 md:-mb-10 md:text-9xl">
           {image.year}
         </p>
-        <p>{image.description}</p>
+        <p
+          // keep the text format
+          className="whitespace-pre-wrap"
+        >
+          {image.description}
+        </p>
       </div>
     </main>
   );
