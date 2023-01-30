@@ -233,7 +233,7 @@ const Home: NextPage = () => {
           </div>
 
           {/* start slideshow */}
-          <button className="text-gray-400 tracking-widest text-sm uppercase"
+          <button className="text-gray-400 hover:text-gray-500 tracking-widest text-sm uppercase pt-[6px]"
             onClick={handleToggleSlideShow}
           >
             {slideShowPlaying ? "Stop Slideshow" : "Start Slideshow"}
